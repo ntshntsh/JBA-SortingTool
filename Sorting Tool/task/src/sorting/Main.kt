@@ -20,11 +20,13 @@ fun main(args: Array<String>) {
 
 }
 
+//stage  3/6 task
 private fun String.sortItOut() {
     val data = read(this).sort(this)
     printData(data)
 }
 
+//stage 2/6 task
 private fun notJustNumbers(mode: String) {
     val data = read(mode).sort(mode)
     val max = data.last()
