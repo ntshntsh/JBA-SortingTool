@@ -357,5 +357,11 @@ files:
 
   learner_created: false
 feedback_link: https://hyperskill.org/learn/step/9626#comment
-status: Unchecked
-record: -1
+status: Failed
+feedback:
+  message: |-
+    Invalid test class &#39;common.SortingToolClue&#39;:
+      1. Test class should have exactly one public zero-argument constructor
+      2. No runnable methods
+  time: Mon, 12 Dec 2022 12:34:34 UTC
+record: 4
