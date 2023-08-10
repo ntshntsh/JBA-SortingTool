@@ -21,15 +21,19 @@ fun main(args: Array<String>) {
     val inputMode = args.chooseMode(INPUT_FILE, IO_DEFAULT)
     val outputMode = args.chooseMode(OUTPUT_FILE, IO_DEFAULT)
 
-    if (SORT_MODE_COUNT in args)
+    if (SORT_MODE_COUNT in args) {
         read(splitMode, inputMode).sortByCount(splitMode).formData(splitMode).outData(outputMode)
-    else read(splitMode, inputMode).sort(splitMode).formData(splitMode).outData(outputMode)
+    } else {
+        read(splitMode, inputMode).sort(splitMode).formData(splitMode).outData(outputMode)
+    }
 }
 
 private fun Array<String>.chooseMode(arg: String, otherwise: String): String {
-    return if (arg in this)
+    return if (arg in this) {
         this[this.indexOf(arg) + 1]
-    else otherwise
+    } else {
+        otherwise
+    }
 }
 
 private fun String.getUnitName(): String {
@@ -40,11 +44,11 @@ private fun String.getUnitName(): String {
     }
 }
 
-private fun Map<String, Int>.formData(mode: String):String {
+private fun Map<String, Int>.formData(mode: String): String {
     val sum = this.values.sum()
     var res = "Total ${mode.getUnitName()}s: $sum\n"
     this.forEach {
-        res+="${it.key}: ${it.value} time(s), ${100 * it.value / sum}%\n"
+        res += "${it.key}: ${it.value} time(s), ${100 * it.value / sum}%\n"
     }
     return res
 }
@@ -55,7 +59,7 @@ private fun String.outData(filePath: String) {
     else File(filePath).writeText(this)
 }
 
-private fun List<String>.formData(mode: String):String {
+private fun List<String>.formData(mode: String): String {
 
     val separator = when (mode) {
         MODE_LINE -> "\n"
@@ -110,8 +114,7 @@ private fun read(mode: String, filePath: String): MutableList<String> {
         } else {
             lines.forEach { data.add(it.trim(' ')) }
         }
-    }
-    else data.addAll(readConsole(mode))
+    } else data.addAll(readConsole(mode))
 
     return data
 }
