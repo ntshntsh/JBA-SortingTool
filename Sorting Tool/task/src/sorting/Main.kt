@@ -1,23 +1,35 @@
 package sorting
 
 import java.util.Scanner
+import java.io.File
 
 const val ARG_DATA = "-dataType"
 const val MODE_LONG = "long"
 const val MODE_LINE = "line"
 const val MODE_WORD = "word"
 
+const val IO_DEFAULT = "console"
+
+const val INPUT_FILE = "-inputFile"
+const val OUTPUT_FILE = "-outputFile"
+
 const val SORT_MODE_COUNT = "byCount"
 
 fun main(args: Array<String>) {
 
-    val mode = if (ARG_DATA in args)
-        args[args.indexOf(ARG_DATA) + 1]
-    else MODE_WORD
+    val splitMode = args.chooseMode(ARG_DATA, MODE_WORD)
+    val inputMode = args.chooseMode(INPUT_FILE, IO_DEFAULT)
+    val outputMode = args.chooseMode(OUTPUT_FILE, IO_DEFAULT)
 
     if (SORT_MODE_COUNT in args)
-        read(mode).sortByCount(mode).printData(mode)
-    else read(mode).sort(mode).printData(mode)
+        read(splitMode, inputMode).sortByCount(splitMode).formData(splitMode).outData(outputMode)
+    else read(splitMode, inputMode).sort(splitMode).formData(splitMode).outData(outputMode)
+}
+
+private fun Array<String>.chooseMode(arg: String, otherwise: String): String {
+    return if (arg in this)
+        this[this.indexOf(arg) + 1]
+    else otherwise
 }
 
 private fun String.getUnitName(): String {
@@ -28,23 +40,30 @@ private fun String.getUnitName(): String {
     }
 }
 
-private fun Map<String, Int>.printData(mode: String) {
+private fun Map<String, Int>.formData(mode: String):String {
     val sum = this.values.sum()
-    println("Total ${mode.getUnitName()}s: $sum")
+    var res = "Total ${mode.getUnitName()}s: $sum\n"
     this.forEach {
-        println("${it.key}: ${it.value} time(s), ${100 * it.value / sum}%")
+        res+="${it.key}: ${it.value} time(s), ${100 * it.value / sum}%\n"
     }
+    return res
 }
 
-private fun List<String>.printData(mode: String) {
+private fun String.outData(filePath: String) {
+    if (filePath == IO_DEFAULT)
+        println(this)
+    else File(filePath).writeText(this)
+}
+
+private fun List<String>.formData(mode: String):String {
 
     val separator = when (mode) {
         MODE_LINE -> "\n"
         else -> " "
     }
 
-    println("Total ${mode.getUnitName()}s: ${this.count()}")
-    println("Sorted data: ${this.joinToString(separator)}")
+    return "Total ${mode.getUnitName()}s: ${this.count()}\n" +
+            "Sorted data: ${this.joinToString(separator)}"
 }
 
 private fun List<String>.sortByCount(mode: String): Map<String, Int> {
@@ -66,7 +85,7 @@ private fun List<String>.sort(mode: String): List<String> {
     return list
 }
 
-private fun read(mode: String): MutableList<String> {
+private fun readConsole(mode: String): MutableList<String> {
     val scanner = Scanner(System.`in`)
     val data = mutableListOf<String>()
     while (scanner.hasNext()) {
@@ -76,5 +95,23 @@ private fun read(mode: String): MutableList<String> {
         }
         data.add(obj.trim(' '))
     }
+    return data
+}
+
+//stage 6/6 IO
+private fun read(mode: String, filePath: String): MutableList<String> {
+    val data = mutableListOf<String>()
+    val file = File(filePath)
+
+    if (file.exists()) {
+        val lines = File(filePath).readLines()
+        if (mode != MODE_LINE) {
+            lines.forEach { it.split("""\\s*""".toRegex()).forEach { w -> data.add(w) } }
+        } else {
+            lines.forEach { data.add(it.trim(' ')) }
+        }
+    }
+    else data.addAll(readConsole(mode))
+
     return data
 }

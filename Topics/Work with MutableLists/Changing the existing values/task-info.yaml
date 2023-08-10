@@ -4,9 +4,7 @@ options:
 - text: "Yes"
 - text: "No"
 - text: Only with var
-- text: Yes, but it won’t be editing, it will rather be re-creating a list
-message_correct: Congratulations!
-message_incorrect: Incorrect solution
+- text: "Yes, but it won’t be editing, it will rather be re-creating a list"
 files:
 - name: src/Main.kt
   visible: true
@@ -20,3 +18,4 @@ files:
 feedback_link: https://hyperskill.org/learn/step/14903#comment
 status: Solved
 record: -1
+local_check: false

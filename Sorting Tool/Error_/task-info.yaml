@@ -416,11 +416,5 @@ files:
 
   learner_created: false
 feedback_link: https://hyperskill.org/learn/step/9627#comment
-status: Failed
-feedback:
-  message: |-
-    Invalid test class &#39;common.SortingToolStage5TestKt&#39;:
-      1. Test class should have exactly one public constructor
-      2. No runnable methods
-  time: Mon, 12 Dec 2022 12:33:29 UTC
+status: Solved
 record: 5

@@ -3,7 +3,7 @@ hyperskill_project:
   ide_files: https://stepik.org/media/attachments/lesson/353193/additional_files.json
   is_template_based: false
   use_ide: true
-update_date: Mon, 12 Dec 2022 12:31:49 UTC
+update_date: "Wed, 09 Aug 2023 15:37:17 UTC"
 stages:
 - id: 574
   step: 9623
@@ -19,10 +19,10 @@ stages:
   is_completed: true
 - id: 578
   step: 9627
-  is_completed: false
+  is_completed: true
 - id: 579
   step: 9628
-  is_completed: false
+  is_completed: true
 topics:
   0:
   - title: Units of information
@@ -41,16 +41,16 @@ topics:
     theory_id: 17408
   - title: Data types
     theory_id: 4388
-  - title: Standard output
-    theory_id: 4425
-  - title: Invoking functions
-    theory_id: 4575
-  - title: Standard input
-    theory_id: 4445
   - title: The classification of basic types
     theory_id: 4455
   - title: Type conversion
     theory_id: 4672
+  - title: Standard output
+    theory_id: 4425
+  - title: Invoking functions
+    theory_id: 4575
+  - title: Standard input with Java Scanner
+    theory_id: 4445
   - title: Reading data with a readln
     theory_id: 11224
   - title: String basics
@@ -92,6 +92,10 @@ topics:
     theory_id: 8788
   - title: Introduction to Operating systems
     theory_id: 9704
+  - title: Command line overview
+    theory_id: 8977
+  - title: Parameters and Options
+    theory_id: 9746
   - title: Comments
     theory_id: 4406
   - title: Coding style conventions
@@ -114,25 +118,33 @@ topics:
     theory_id: 4564
   - title: String arrays
     theory_id: 11477
-  - title: Command line overview
-    theory_id: 8977
-  - title: Parameters and Options
-    theory_id: 9746
   - title: The main() function
     theory_id: 10484
+  - title: IntelliJ IDEA run configurations
+    theory_id: 10630
   - title: Floating-point types
     theory_id: 4502
-  - title: IntelliJ Run Configurations
-    theory_id: 10630
   2:
   - title: Computer algorithms
     theory_id: 16547
   - title: The big O notation
     theory_id: 16699
-  - title: Best, average and worst cases
+  - title: "Best, average and worst cases"
     theory_id: 20084
   - title: Data structures
     theory_id: 16927
+  - title: Pseudocode
+    theory_id: 15090
+  - title: Pseudocode basics
+    theory_id: 19510
+  - title: Complex constructions in pseudocode
+    theory_id: 20922
+  - title: Fixed-size array
+    theory_id: 20078
+  - title: Dynamic array
+    theory_id: 5357
+  - title: Divide and conquer
+    theory_id: 19087
   - title: Introduction to MutableList
     theory_id: 14879
   - title: Work with MutableLists
@@ -145,24 +157,12 @@ topics:
     theory_id: 10730
   - title: Mutable List
     theory_id: 11032
-  - title: Pseudocode
-    theory_id: 15090
-  - title: Pseudocode basics
-    theory_id: 19510
-  - title: Complex constructions in pseudocode
-    theory_id: 20922
-  - title: Fixed-size array
-    theory_id: 20078
-  - title: Dynamic array
-    theory_id: 5357
-  - title: Recursion basics
-    theory_id: 5984
-  - title: Divide and conquer
-    theory_id: 19087
   - title: Sorting problem
     theory_id: 4954
+  - title: Recursion basics
+    theory_id: 5984
   - title: Merge sort
-    theory_id: 4964
+    theory_id: 29428
   3:
   - title: Map
     theory_id: 12659
@@ -187,7 +187,7 @@ topics:
   - title: Functions as objects
     theory_id: 5991
   - title: Lambda expressions
-    theory_id: 6154
+    theory_id: 30148
   - title: Reading files
     theory_id: 6351
   - title: Writing files

@@ -4,9 +4,7 @@ options:
 - text: foo(arg)
 - text: arg.foo
 - text: foo
-- text: foo[arg]
-message_correct: Congratulations!
-message_incorrect: Incorrect solution
+- text: "foo[arg]"
 files:
 - name: src/Main.kt
   visible: true
@@ -20,3 +18,4 @@ files:
 feedback_link: https://hyperskill.org/learn/step/4579#comment
 status: Solved
 record: -1
+local_check: false

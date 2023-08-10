@@ -1,13 +1,11 @@
 type: choice
 is_multiple_choice: false
 options:
-- text: A function does not return a useful result, only a special value.
-- text: A function returns multiple results at the same time, one of these results
-    is a special value.
+- text: "A function does not return a useful result, only a special value."
+- text: "A function returns multiple results at the same time, one of these results\
+    \ is a special value."
 - text: A function does not return anything.
 - text: A function always returns a useful result or a special value.
-message_correct: Congratulations!
-message_incorrect: Incorrect solution
 files:
 - name: src/Main.kt
   visible: true
@@ -21,3 +19,4 @@ files:
 feedback_link: https://hyperskill.org/learn/step/4577#comment
 status: Solved
 record: -1
+local_check: false

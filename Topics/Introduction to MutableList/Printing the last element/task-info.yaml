@@ -1,15 +1,13 @@
 type: choice
 is_multiple_choice: true
 options:
-- text: println(mutList[-1])
-- text: println(mutList[mutList.lastIndex])
-- text: println(mutList[mutList.size - 2])
-- text: println(mutList[mutList.size - 1])
+- text: "println(mutList[-1])"
+- text: "println(mutList[mutList.lastIndex])"
+- text: "println(mutList[mutList.size - 2])"
+- text: "println(mutList[mutList.size - 1])"
 - text: println(mutList.last())
-- text: println(mutList[mutList.size])
-- text: println(mutList[mutList.size + 1])
-message_correct: Congratulations!
-message_incorrect: Incorrect solution
+- text: "println(mutList[mutList.size])"
+- text: "println(mutList[mutList.size + 1])"
 files:
 - name: src/Main.kt
   visible: true
@@ -23,3 +21,4 @@ files:
 feedback_link: https://hyperskill.org/learn/step/14880#comment
 status: Solved
 record: -1
+local_check: false

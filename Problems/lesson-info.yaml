@@ -1,12 +1,12 @@
 content:
 - val or var?
-- First, second, third
+- "First, second, third"
 - Your name
 - The Hello World program
 - The eternal truth
 - Four numbers
 - Printing each word in a new line
-- Size, min and max
+- "Size, min and max"
 - Cutting the fraction
 - Read a Double
 - How to learn the whole Kotlin per one task

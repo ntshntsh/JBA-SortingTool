@@ -1,12 +1,10 @@
 type: choice
 is_multiple_choice: true
 options:
-- text: list[list.lastIndex]
-- text: list[1]
+- text: "list[list.lastIndex]"
+- text: "list[1]"
 - text: list.first()
-- text: list[0]
-message_correct: Congratulations!
-message_incorrect: Incorrect solution
+- text: "list[0]"
 files:
 - name: src/Main.kt
   visible: true
@@ -20,3 +18,4 @@ files:
 feedback_link: https://hyperskill.org/learn/step/14883#comment
 status: Solved
 record: -1
+local_check: false
